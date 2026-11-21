@@ -1,0 +1,5 @@
+output.jsonl
+sample/
+__pycache__/
+*.py[cod]
+impact_map.json.gz
