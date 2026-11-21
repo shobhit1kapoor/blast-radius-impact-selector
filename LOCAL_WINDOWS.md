@@ -28,4 +28,6 @@ A pruning experiment that removed an optimizer regression-test family missed a p
 - Final scoring uses unseen patches. The practice score is useful feedback, but only the final decides the prize.
 - The competition cutoff is Sunday, November 22 at 11:00 a.m. ET.
 
-The online submission still needs a public GitHub repository and a selected GitHub owner. This local folder has not been published or connected to a remote. The active `gh` account and local Git author differ, so choose the owner before creating or pushing the public repository.
+The public repository is [shobhit1kapoor/blast-radius-impact-selector](https://github.com/shobhit1kapoor/blast-radius-impact-selector), and the submitted-ready commit is `fc7059abe7ba1b0487d4e4883d36c73c4536c58b`. It is public, has a top-level `Dockerfile`, and contains no sample answers or generated output. The active GitHub account owns the repository. The commit author is `jawaharlaldoon-bit <jawaharlaldoon@gmail.com>` because that is the local Git author configured on this machine; verify this is acceptable for your team's ownership rules before selecting the commit on the track page.
+
+The track site requires a registered participant to sign in before entering the repository and commit. Sign in with the email used to register for the Buildathon, then enter the repository URL and commit above. The site currently lists the cutoff as Sunday, November 22 at 10:00 a.m. Central.
