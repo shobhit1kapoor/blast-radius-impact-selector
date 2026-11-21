@@ -1,6 +1,24 @@
-# Blast Radius submission workspace
+# Blast Radius: SQLGlot test impact selector
 
-An initial submission for the Blast Radius track. It builds a per-test impact map from the pinned SQLGlot source, then selects tests and schedules them across workers for each incoming patch.
+A submission workspace for RWX's Blast Radius track. The container builds a per-test impact map from the pinned SQLGlot source, then selects tests and schedules them across up to eight workers for each incoming patch.
+
+## Current practice result
+
+The latest local run scored **141.569 simulated seconds, zero misses** on the 30 public practice patches. The selector used **0.407 CPU seconds**, for **141.976 seconds total** in that run. The live board's leader was at **136.1 seconds** when checked on November 21, 2026; this run was about 5.9 seconds behind and would have been around third in that snapshot. The board is live, and final patches are unseen, so neither that position nor the practice score predicts the final rank.
+
+## Design
+
+- Build-time coverage records connect source lines to individual tests, including child-process coverage.
+- AST scopes provide function and class fallbacks for lines the suite did not execute directly.
+- Source-derived maps connect fixtures, dialects, and expression symbols to tests.
+- Dynamic dispatch hubs retain a full-suite fallback when static evidence is too weak.
+- The scheduler minimizes the slowest worker plus the published per-worker charge.
+- A narrow static equivalence check skips operator-only identity/equality edits only when the pinned source establishes the field's type and the pinned tests do not assign it directly.
+- Numeric-escape table edits select only dialect-specific tests whose inputs contain one of the changed escape keys.
+- `WEEK_OFFSET` setting edits use the pinned test source and fixtures to find week-related cases for that dialect.
+- Comment-only insertions are skipped only at tokenizer-verified safe line boundaries; directive comments remain selected.
+
+The selector does not use a practice-patch-to-failure lookup table. The public sample answers are mounted only by the local scoring script, not by the runtime container.
 
 ## The problem
 

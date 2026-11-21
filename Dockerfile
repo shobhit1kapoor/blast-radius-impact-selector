@@ -7,6 +7,9 @@ RUN python -m pip install --no-cache-dir -r /tmp/requirements.lock \
 COPY fetch_source.py /app/fetch_source.py
 RUN python /app/fetch_source.py
 COPY run_coverage.py /app/run_coverage.py
+COPY .coveragerc /app/.coveragerc
+COPY test_context_plugin.py /app/test_context_plugin.py
+COPY sitecustomize.py /app/sitecustomize.py
 RUN python /app/run_coverage.py
 COPY build_map.py /app/build_map.py
 RUN python /app/build_map.py
